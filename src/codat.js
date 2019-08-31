@@ -95,7 +95,7 @@ class CodatApiClient {
 
   addConnection (companyId, platformKey) {
     return this.clientsApi.post(
-      constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, {'platformKey': platformKey})
+      constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, platformKey)
   }
 
   getCompany (companyId) {
