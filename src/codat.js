@@ -3,6 +3,7 @@ const btoa = require('btoa')
 
 const constants = {
   COMPANIES: 'companies',
+  INTEGRATIONS: 'integrations',
   UAT: 'uat',
   PRODUCTION: 'production'
 }
@@ -76,6 +77,11 @@ class CodatApiClient {
   __companyClient () {
     return this.clientsApi
   }
+
+  getIntegrations () {
+    return this.clientsApi.get(constants.INTEGRATIONS)
+  }
+
 
   getCompanies () {
     return this.clientsApi.get(constants.COMPANIES)
