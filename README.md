@@ -18,7 +18,7 @@ Node module for accessing the Codat Accounting Data API from your node applicati
 
 You can install this package using the following command:
 
-`npm install --save codat`
+`npm install --save new-codat`
 
 For more information on Codat see [www.codat.io](https://www.codat.io)
 

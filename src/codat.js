@@ -4,6 +4,7 @@ const btoa = require('btoa')
 const constants = {
   COMPANIES: 'companies',
   INTEGRATIONS: 'integrations',
+  CONNECTIONS: 'connections',
   UAT: 'uat',
   PRODUCTION: 'production'
 }
@@ -82,7 +83,6 @@ class CodatApiClient {
     return this.clientsApi.get(constants.INTEGRATIONS)
   }
 
-
   getCompanies () {
     return this.clientsApi.get(constants.COMPANIES)
   }
@@ -91,6 +91,11 @@ class CodatApiClient {
     return this.clientsApi.post(
       constants.COMPANIES, null,
       companyName instanceof AddCompany ? companyName : new AddCompany(companyName, platformType))
+  }
+
+  addConnection (companyId, platformKey) {
+    return this.clientsApi.post(
+      constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, {platformKey: platformKey})
   }
 
   getCompany (companyId) {
