@@ -56,14 +56,6 @@ class AddCompany {
 }
 exports.AddCompany = AddCompany
 
-class AddConnection {
-  constructor (companyId, platformKey) {
-    this.companyId = companyId
-    this.platformKey = platformKey
-  }
-}
-exports.AddConnection = AddConnection
-
 class UpdateCompanySettings {
   constructor (offlineConnectorInstall) {
     this.offlineConnectorInstall = offlineConnectorInstall
@@ -97,13 +89,13 @@ class CodatApiClient {
 
   addCompany (companyName, platformType) {
     return this.clientsApi.post(
-      constants.COMPANIES, null,
-      companyName instanceof AddCompany ? companyName : new AddCompany(companyName, platformType))
+        constants.COMPANIES, null,
+        companyName instanceof AddCompany ? companyName : new AddCompany(companyName, platformType))
   }
 
   addConnection (companyId, platformKey) {
     return this.clientsApi.post(
-      constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, platformKey)
+        constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, platformKey)
   }
 
   getCompany (companyId) {
@@ -124,8 +116,8 @@ class CodatApiClient {
 
   updateCompanySettings (companyId, offlineConnectorInstall) {
     return this.clientsApi.put(
-      `${this.__companiesBaseUrl(companyId)}/settings`, null,
-      companyId instanceof UpdateCompanySettings ? companyId : new UpdateCompanySettings(offlineConnectorInstall))
+        `${this.__companiesBaseUrl(companyId)}/settings`, null,
+        companyId instanceof UpdateCompanySettings ? companyId : new UpdateCompanySettings(offlineConnectorInstall))
   }
 
   getCompanyDataStatus (companyId) {
