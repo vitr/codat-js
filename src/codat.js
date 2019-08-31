@@ -56,6 +56,14 @@ class AddCompany {
 }
 exports.AddCompany = AddCompany
 
+class AddConnection {
+  constructor (companyId, platformKey) {
+    this.companyId = companyId
+    this.platformKey = platformKey
+  }
+}
+exports.AddConnection = AddConnection
+
 class UpdateCompanySettings {
   constructor (offlineConnectorInstall) {
     this.offlineConnectorInstall = offlineConnectorInstall
