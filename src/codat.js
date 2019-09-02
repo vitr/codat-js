@@ -105,7 +105,7 @@ class CodatApiClient {
 
   getAttachment (companyId, connectionId, billId, attachmentId) {
     return this.clientsApi.get(
-        constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS + '/data/bills/' + billId + '/attachments/' + attachmentId + '/download')
+        constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS + '/' + connectionId + '/data/bills/' + billId + '/attachments/' + attachmentId + '/download')
   }
 
   getCompany (companyId) {
