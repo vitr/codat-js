@@ -98,6 +98,16 @@ class CodatApiClient {
         constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS, null, platformKey)
   }
 
+  getAttachments (companyId, connectionId, billId) {
+    return this.clientsApi.get(
+        constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS + '/data/bills/' + billId + '/attachments')
+  }
+
+  getAttachment (companyId, connectionId, billId, attachmentId) {
+    return this.clientsApi.get(
+        constants.COMPANIES + '/' + companyId + '/' + constants.CONNECTIONS + '/data/bills/' + billId + '/attachments/' + attachmentId + '/download')
+  }
+
   getCompany (companyId) {
     return this.clientsApi.get(this.__companiesBaseUrl(companyId))
   }
