@@ -1,4 +1,4 @@
-name: codat-js
+name: publish
 
 on:
   release:
