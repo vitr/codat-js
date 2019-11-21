@@ -13,11 +13,11 @@
     "data",
     "api"
   ],
-  "author": "Codat <engineering@codat.io> (https://www.codat.io)",
+  "author": "vitr <vit@vitr.com.au> (https://vitr.com.au)",
   "license": "Apache2",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codatio/codat-js.git"
+    "url": "git+https://github.com/vitr/codat-js.git"
   },
   "dependencies": {
     "btoa": "^1.1.2",
